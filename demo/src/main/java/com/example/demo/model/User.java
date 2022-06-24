@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.List;
 
 @Data
 @Entity
@@ -27,4 +28,8 @@ public class User {
                 inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
 
     private Collection<Role> roles;
+
+    public <T> User(String firstName, String lastName, String email, String password, List<T> role_user) {
+
+    }
 }
